@@ -10,9 +10,6 @@
 
 #define UC unsigned char
 
-#define R_PIO 24
-#define G_PIO 23
-#define B_PIO 22
 
 #define MOTOR1_IN1_PIN 18
 #define MOTOR1_IN2_PIN 19
@@ -41,6 +38,8 @@ unsigned char dat;  //1Byte 데이터를 수신하는 함수
 
 
 int main() {
+
+
     // WiringPi 초기화
     if (wiringPiSetupGpio() == -1) {
         fprintf(stderr, "Failed to initialize WiringPi\n");
