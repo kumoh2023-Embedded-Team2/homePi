@@ -7,7 +7,7 @@
 #include <stdint.h>
 #include "motor.h"
 
-#define DHTPIN 4
+#define DHTPIN 16
 
 extern int door;
 
