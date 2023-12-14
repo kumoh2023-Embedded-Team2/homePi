@@ -42,12 +42,14 @@ int readDHT11Data() {
         return -1;  // 실패한 경우 음수 값을 반환
     }
 }
+// 온도를 읽은 여부를 나타내는 변수
+int temperatureReadDone = 0;
 
 // 온습도 센서 제어 스레드
-void* temperatureControlThread() {
+void* temperatureControlThread(void* arg) {
     while (1) {
-        if (door == 1) {
-            // 문이 열려있을 때 온도 제어
+        if (door == 1 && !temperatureReadDone) {
+            // 문이 열려있을 때 온도 제어하고, 아직 온도를 읽지 않은 경우에만 실행
             int temperature = readDHT11Data();
             if (temperature >= 25) {
                 // 온도가 25 이상이면 모터1 작동
@@ -56,9 +58,14 @@ void* temperatureControlThread() {
                 // 온도가 25 미만이면 모터2 작동
                 controlMotor2(1);
             }
-        } else {
+
+            // 온도를 읽은 표시
+            temperatureReadDone = 1;
+        } else if (door == 0) {
+            // door가 0이면 모터 정지 및 온도 읽은 상태 초기화
             controlMotor1(0);
             controlMotor2(0);
+            temperatureReadDone = 0;
         }
 
         // 대기시간
