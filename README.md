@@ -50,5 +50,12 @@ $./homePi
 
 # 간트 차트 
 
+1. 초기 간트 차트
+![image](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/3bf77aad-dccf-4891-b261-14a3cdc510e9)
+
+2. 실제 간트 차트
+![image](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/f9e7904c-8794-4816-9350-20c0e13603ed)
+
+데모날짜가 미뤄짐에따라 코드개발에 조금더 신경을 쓸수 있었고, 오류해결 및 블루투스 연결 문제에 있어서 시간이 조금더 필요했기 때문에 기존 계획과는 조금 달라졌습니다.
 
 
