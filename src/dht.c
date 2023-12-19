@@ -7,12 +7,11 @@ int readDHT11Data() {
 
     int dht11_dat[5] = {0,};
 
+    // DHT로 데이터 요청 신호 보내기.
     pinMode(DHTPIN, OUTPUT);
     digitalWrite(DHTPIN, LOW);
     delay(18);
 
-    digitalWrite(DHTPIN, HIGH);
-    delayMicroseconds(30);
     pinMode(DHTPIN, INPUT);
 
     for (i = 0; i < 83; i++) {
@@ -46,9 +45,9 @@ int readDHT11Data() {
 int temperatureReadDone = 0;
 
 // 온습도 센서 제어 스레드
-void* temperatureControlThread(void* arg) {
+void* temperatureControlThread() {
     while (1) {
-        if (door == 1 && !temperatureReadDone) {
+        if (door == 73 && !temperatureReadDone) {
             // 문이 열려있을 때 온도 제어하고, 아직 온도를 읽지 않은 경우에만 실행
             int temperature = readDHT11Data();
             if (temperature >= 25) {
@@ -61,7 +60,7 @@ void* temperatureControlThread(void* arg) {
 
             // 온도를 읽은 표시
             temperatureReadDone = 1;
-        } else if (door == 0) {
+        } else if (door == 79) {
             // door가 0이면 모터 정지 및 온도 읽은 상태 초기화
             controlMotor1(0);
             controlMotor2(0);

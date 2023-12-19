@@ -8,7 +8,7 @@ void initializeMotors() {
     pinMode(MOTOR2_IN2_PIN, OUTPUT);
 }
 
-void controlMotor1(int direction) {
+void controlMotor1(int direction) { // 1번 모터 동작//
     if (direction == 1) {
         // 정방향 동작
         digitalWrite(MOTOR1_IN1_PIN, HIGH);
@@ -20,7 +20,7 @@ void controlMotor1(int direction) {
     }
 }
 
-void controlMotor2(int direction) {
+void controlMotor2(int direction) { // 2번 모터 동작
     if (direction == 1) {
         // 정방향 동작
         digitalWrite(MOTOR2_IN1_PIN, HIGH);

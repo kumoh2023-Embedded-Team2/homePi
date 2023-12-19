@@ -27,4 +27,4 @@ $(TARGET): $(OBJS)
 # Phony target to clean the build
 .PHONY: clean
 clean:
-	rm -rf $(BUILD_DIR) $(TARGET)
+	rm -rf $(BUILD_DIR)

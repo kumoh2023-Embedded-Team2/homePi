@@ -14,8 +14,8 @@ void ledColorSet(UC R_no, UC G_no, UC B_no) {
 // LED 스레드
 void* ledThread() {
     while (1) {
-        if (door == 1) {
-            // 문이 열려있을 때 LED 켜기 
+        if (door == 73) {
+            // 문이 열려있을 때 LED 켜기 (파란색)
             ledColorSet(255, 0, 0);
         } else {
             // 문이 닫혀있을 때 LED 끄기 (흰색)
