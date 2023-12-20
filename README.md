@@ -24,22 +24,26 @@
 1. doorPi에서 키패드 혹은 NFC를 통해 문을열면, 블루투스 모듈을 통해 I/O (IN/OUT)라는 1바이트 크기의 데이터를 homePi에게 전달 합니다.
 2. homePi는 블루투스를 통해 전달될 값을 대기하고있다가 I(IN) 혹은 O(OUT)값을 전달 받게 되면 각각의 작동을 하게됩니다.
 3. 블루투스 모듈을 통해 homePi에 I(IN)이 들어왔을 경우에는 DHT-11(온습도 센서)와 LED(조명 역할), 부저(웰컴 사운드)가 스레드를 통해서 동시에 작동하게 됩니다.
-4. DHT-11센서를 통해서 온도를 측정하고, 온도를 homePi에 전달하여 전달받은 값이 25도 이상일 경우에는 냉방 모터가, 25도 이하일 경우에는 난방 모터가 작동하게 됩니다.
+4. DHT-11센서를 통해서 온도를 측정하고, 온도를 homePi에 전달하여 전달받은 값이 25도 이상일 경우에는 냉방 모터가, 25도 이하일 경우에는 난doo방 모터가 작동하게 됩니다.
 5. 블루투스 모듈을 통해 homePi에 O(OUT)이 들어왔을 경우에는 냉/난방 모터, LED 가 작동을 정지하게 되고, 부저에서 굿바이 사운드가 출력하게 됩니다. 
 
 ![시스템구조](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/a3950484-6aa2-4562-ac04-ef442b80b8c4)
+## 하드웨어 구성
+- doorPi
+![KakaoTalk_20231220_200939772](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/e019df80-336d-47e7-9e36-8db11ca24618)
 
+- homePi
+ ![KakaoTalk_20231220_200939772_01](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/c30a42ee-e4b6-460e-8c6b-75f20a47b5e1)
+
+- 전체 (doorPi+homePi)
+![KakaoTalk_20231220_200939772_02](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/1bdf0532-91a3-48dc-a9d3-583d1855bd7f)
+ 
 # 사용모듈
 - DHT-11 센서
-![image](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/19d5220b-1bb6-40b8-9629-87f92713cee7)
 - 수동 부저
-![image](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/bed20c69-9669-4d82-a2fd-cb712f58fdc7)
 - RGB_LED
-![image](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/7dc2111b-17cf-4a0d-9ad3-6d1babe46e13)
 - 블루투스 모듈
-![image](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/7b669968-6d4a-4ba6-8088-a47c8df8ab30)
 - DC 모터
-![image](https://github.com/kumoh2023-Embedded-Team2/homePi/assets/127746054/072efeab-5905-4245-a720-74466eddece4)
 
 # 실행방법 
 
@@ -47,6 +51,8 @@ $ make
 
 $./homePi
 
+# 실행 동영상 
+[![예제](http://img.youtube.com/vi/sgxC2jrwDj0/0.jpg)](https://youtu.be/sgxC2jrwDj0?t=0s) 
 
 # 간트 차트 
 
